@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Registration</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50; /* Green background for header */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: white; /* White color for h2 */
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            margin-top: 5px; /* Adjust margin for file input */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green submit button */
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="photos/kasulogo.png" alt="Logo" style="max-width: 100px;">
+        <h2>Candidate Registration</h2>
+    </header>
+    <form method="POST" action="save_candidate.php" enctype="multipart/form-data">
+        <label>Name:</label>
+        <input type="text" name="name" required><br><br>
+        
+        <label>Level:</label>
+        <input type="text" name="level" required><br><br>
+        
+        <label>Matric Number:</label>
+        <input type="text" name="matric_number" required><br><br>
+        
+        <label for="category">Office:</label>
+<select id="category" name="category" required>
+  <option value="President">President</option>
+  <option value="Vice President I">Vice President I</option>
+  <option value="Vice President II">Vice President II</option>
+  <option value="Secretary General">Secretary General</option>
+  <option value="Assistant Secretary General">Assistant Secretary General</option>
+  <option value="Financial Secretary">Financial Secretary</option>
+  <option value="Treasurer">Treasurer</option>
+  <option value="Auditor General">Auditor General</option>
+  <option value="Welfare Director">Welfare Director</option>
+  <option value="Sport Director">Sport Director</option>
+  <option value="Social Director">Social Director</option>
+  <option value="PRO I">PRO I</option>
+  <option value="PRO II">PRO II</option>
+  <option value="DPRS">DPRS</option>
+  <option value="Sales Director">Welfare Director</option>
+</select><br><br>
+ <!-- Updated input name -->
+        
+        <label>Bio:</label>
+        <textarea name="bio"></textarea><br><br>
+        
+        <label>Photo:</label>
+        <input type="file" name="photo" required><br><br>
+        
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

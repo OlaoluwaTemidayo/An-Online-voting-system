@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Registration</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50; /* Green background for header */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: white; /* White color for h2 */
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            margin-top: 5px; /* Adjust margin for file input */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green submit button */
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="photos/kasulogo.png" alt="Logo" style="max-width: 100px;">
+        <h2>Voter Registration</h2>
+    </header>
+    <form method="POST" action="save_voter.php">
+        <label>Name:</label>
+        <input type="text" name="name" required><br><br>
+        
+        <label>Level:</label>
+        <input type="text" name="level" required><br><br>
+        
+        <label>Matric Number:</label>
+        <input type="text" name="matric_number" required><br><br>
+
+        <label>Password:</label>
+        <input type="text" name="password" required><br><br>
+
+        <?php
+        $category_id = 1; // Replace with the actual category ID
+        ?>
+        <input type="hidden" name="category_id" value="<?php echo $category_id; ?>">
+        
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
